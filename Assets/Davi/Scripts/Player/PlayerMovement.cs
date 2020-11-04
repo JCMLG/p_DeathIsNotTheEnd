@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void FlipPlayer(float value)
     {
+        Physics2D.gravity = new Vector2(0, 9.81f);
         gameObject.transform.rotation = Quaternion.Euler(value, 0, 0);
         flipDirection = value;
     }
