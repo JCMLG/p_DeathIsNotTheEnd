@@ -93,12 +93,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4876633192591339747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452f0522255c43d479423f3017eb9420, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac88929a6899d24685f47e51fa58ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSmoothing: 0.3
+  movementSmoothing: 0.05
   runSpeed: 60
-  jumpHeight: 12.17
+  jumpHeight: 12
   airControl: 1
   variableJumpHeight: 1
   minJumpHeight: 6
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4876633192591339747}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: fe61ac4c46f1139419305990e7d196cd, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -160,7 +160,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 4876633192591339747}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: fe61ac4c46f1139419305990e7d196cd, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
