@@ -62,5 +62,5 @@ crashlytics-build.properties
 *.wav.meta
 
 
-
+# Program-Wide file extention filtered
 *.meta
