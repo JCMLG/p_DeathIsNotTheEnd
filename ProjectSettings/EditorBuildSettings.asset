@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Jose/Scenes/MainMenu.unity
-    guid: 400a3dc5be577fb4ba067585ad54a29b
-  - enabled: 1
     path: Assets/Jose/Scenes/Credits.unity
-    guid: c482e3df516cc924e99e6ee03fe00057
+    guid: a4fc83e640dfb0141aa4427e9087498e
+  - enabled: 1
+    path: Assets/Jose/Scenes/MainMenu.unity
+    guid: 46ea364713f1dbd44807cbd8ad345742
   m_configObjects: {}

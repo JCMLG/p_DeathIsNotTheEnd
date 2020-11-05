@@ -552,7 +552,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 980704211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3fe6e88260bc8428e9acab0c62a6bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fea9e1a56317fe3478bc2aaff07533dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &980704213
@@ -791,7 +791,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 89508d72602cb2c4e8ae58ad2a630c80, type: 3}
+    m_Font: {fileID: 12800000, guid: 48cc0ad9ff9e5514baf1ec043596b854, type: 3}
     m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
@@ -1035,7 +1035,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1682235755
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1620228986}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.27982256
+  m_Size: 0.2798226
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1240,7 +1240,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2083651468
