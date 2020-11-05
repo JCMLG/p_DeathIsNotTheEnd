@@ -63,18 +63,22 @@ public class CollisionInteraction : MonoBehaviour
         if (collision.gameObject.layer == flipLayer)
         {
             FlipGravity(-1);
-            Debug.Log(playerController.flippedGravity);
-            RipFlesh();
+            SpriteChange();
+            
+
         }
 
         else if(collision.gameObject.layer == deathLayer && 
             playerController.rb.velocity.y > 0)
         {
-            RipFlesh();
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SpriteChange();
+            //brute force solution.... i can definitely optimise it
+            boneEffect.transform.parent = null;
+            boneEffect.SetActive(true);
+            
             gm.goGone = true;
             gameObject.SetActive(false);
-            //gameObject.transform.position = respawnPoint.transform.position;
+
 
         }
 
@@ -83,7 +87,7 @@ public class CollisionInteraction : MonoBehaviour
         else if(collision.gameObject.layer == checkpointLayer)
         {
             Debug.Log("Transform Detected");
-            //respawnPoint.position = collision.gameObject.transform.position;
+
         }
     }
 
@@ -96,23 +100,27 @@ public class CollisionInteraction : MonoBehaviour
         //playerController.flipDirection *= flipFactor;
     }
 
-    public void RipFlesh()
+    public void SpriteChange()
     {
         //Object Pool some of this stuff later.
-        Debug.Log("Ripping Flesh...");
-        spriteRend.material.SetFloat("_Alpha", 0f);
+        Debug.Log("Changing Sprite...");
+
+        Debug.Log("is Skeleton? " + isSkeleton);
 
         if (!isSkeleton)
         {
+            spriteRend.material.SetFloat("_Alpha", 0f);
             bloodEffect.transform.parent = null;
             bloodEffect.SetActive(true);
             isSkeleton = true;
         }
-        else
+        else if (isSkeleton)
         {
-            boneEffect.transform.parent = null;
-            boneEffect.SetActive(true);
+            spriteRend.material.SetFloat("_Alpha", 1f);
+            isSkeleton = false;
         }
+
+
     }
 
 

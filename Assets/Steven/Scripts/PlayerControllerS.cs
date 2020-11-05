@@ -259,10 +259,26 @@ public class PlayerControllerS : MonoBehaviour
 
     public void FlipVertical(float value)
     {
-        float flipDirection;
 
-        gameObject.transform.rotation = Quaternion.Euler(value, 0, 0);
-        flipDirection = value;
+        //Debug.Log("FLIPPING SPRITE = " + value);
+        // float flipDirection;
+
+        if (flippedGravity)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(value, 0, 0);
+            Debug.Log("FLIPPING SPRITE NEW = " + value);
+        }
+
+        else
+        {
+            gameObject.transform.rotation = Quaternion.Euler(value * 2, 0, 0);
+            Debug.Log("FLIPPING SPRITE NEW = " + value);
+
+        }
+
+
+
+        //flipDirection = value;
     }
 
     //flips sprite horizontally
