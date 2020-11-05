@@ -25,7 +25,7 @@ public class GravityFlip : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Flip"))
+        if (collision.CompareTag("Flip") && _playerRB.velocity.y < 0)
         {
             FlipGravity(-1);
             RipFlesh();
