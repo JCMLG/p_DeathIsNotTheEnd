@@ -28,7 +28,7 @@ public class GravityFlip : MonoBehaviour
         if (collision.CompareTag("Flip"))
         {
             FlipGravity(-1);
-            RipFlesh(collision.transform);
+            RipFlesh();
         }
     }
 
@@ -41,10 +41,10 @@ public class GravityFlip : MonoBehaviour
         _playerJump.flipDirection = -1;
     }
 
-    public void RipFlesh(Transform collisionPoint)
+    public void RipFlesh()
     {
         _spriteRend.material.SetFloat("_Alpha", 0f);
-        GameObject bloodSplat = Instantiate(bloodEffect, collisionPoint.position, Quaternion.identity);
+        GameObject bloodSplat = Instantiate(bloodEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(bloodSplat, particleTime);
 
     }
