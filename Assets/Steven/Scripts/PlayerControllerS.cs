@@ -48,6 +48,7 @@ public class PlayerControllerS : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+       // Debug.Log(flippedGravity);
         rb = GetComponent<Rigidbody2D>();
         //rb = RigidbodyInterpolation2D.Interpolate;
     }
@@ -71,7 +72,7 @@ public class PlayerControllerS : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("IntialJump");
+               // Debug.Log("IntialJump");
                 isJumping = true;
                 jump = true;
 
@@ -110,14 +111,14 @@ public class PlayerControllerS : MonoBehaviour
             #region Flip Sprite Horizontally
             if (move > 0 && !facingRight)
             {
-                Debug.Log("Flip to right");
+               // Debug.Log("Flip to right");
                 // ... flip the player.
                 FlipHorizontal();
             }
             // Otherwise if the input is moving the player left and the player is facing right...
             else if (move < 0 && facingRight)
             {
-                Debug.Log("Flip to left");
+               // Debug.Log("Flip to left");
                 // ... flip the player.
                 FlipHorizontal();
             }
@@ -130,7 +131,7 @@ public class PlayerControllerS : MonoBehaviour
 
         else if (variableJump)
         {
-            Debug.Log("Variable Jumping Method Active");
+            
 
             if (isGrounded)
             {
@@ -143,7 +144,7 @@ public class PlayerControllerS : MonoBehaviour
                     isGrounded = false;
                 }
             }
-            VariableJump(isGrounded, isJumping);
+            VariableJump(isGrounded, isJumping, flippedGravity);
         }
 
     }
@@ -158,11 +159,11 @@ public class PlayerControllerS : MonoBehaviour
             rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
         }
 
-        else
-        {
-            rb.AddForce(Vector2.down * jumpHeight, ForceMode2D.Impulse);
-        }
-
+        /* else if
+         {
+             rb.AddForce(Vector2.down * jumpHeight, ForceMode2D.Impulse);
+         }
+         */
 
     }
 
@@ -197,47 +198,61 @@ public class PlayerControllerS : MonoBehaviour
     }
 
 
-    public void VariableJump(bool isGrounded, bool isJumping)
+    public void VariableJump(bool isGrounded, bool isJumping, bool inverse)
     {
+        //Something was wrong...
         if (isJumping || !isGrounded)
         {
+            #region Old Jump Code
+            if (!inverse)
+            {
+                //We're jumping upwards here.
+                if (rb.velocity.y < 0)
+                {
+                    rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                }
 
-            //if (!inverse)
+                else if (!Input.GetButton("Jump") && rb.velocity.y > 0)
+                {
+                    rb.velocity += Vector2.up * Physics2D.gravity.y * (minJumpHeight - 1) * Time.deltaTime;
+                }
+
+                
+            }
+
+            else if (inverse)
+            {
+                //Debug.Log("Inverse Gravity");
+                if (rb.velocity.y > 0)
+                {
+                //    Debug.Log("Inverted Jump");
+                    rb.velocity += Vector2.down * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                   // Debug.Log(Physics2D.gravity.y);
+                }
+
+                else if (rb.velocity.y < 0 && !Input.GetButton("Jump"))
+                {
+                 //   Debug.Log("Inverted Short Hop");
+
+                    rb.velocity += Vector2.down * Physics2D.gravity.y * (minJumpHeight - 1) * Time.deltaTime;
+
+                  //  Debug.Log(Physics2D.gravity.y);
+                }
+            }
+            #endregion
+
+            #region New Jump Code
+            //if (isFalling())
             //{
-            //We're jumping upwards here.
-            if (isFalling())
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime * getFlipFactor();
-            }
-
-            else if (!Input.GetButton("Jump"))
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (minJumpHeight - 1) * Time.deltaTime * getFlipFactor();
-            }
-
-
-            #region
+            //    rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime * getFlipFactor();
             //}
 
-            //else if (inverse)
+            //else if (!Input.GetButton("Jump"))
             //{
-            //    if (rb.velocity.y > 0)
-            //    {
-            //        Debug.Log("Inverted Jump");
-            //        rb.velocity += Vector2.down * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-            //        Debug.Log(Physics2D.gravity.y);
-            //    }
-
-            //    else if (rb.velocity.y < 0 && !Input.GetButton("Jump"))
-            //    {
-            //        Debug.Log("Inverted Short Hop");
-
-            //        rb.velocity += Vector2.down * Physics2D.gravity.y * (minJumpHeight - 1) * Time.deltaTime;
-
-            //        Debug.Log(Physics2D.gravity.y);
-            //    }
+            //    rb.velocity += Vector2.up * Physics2D.gravity.y * (minJumpHeight - 1) * Time.deltaTime * getFlipFactor();
             //}
             #endregion
+
         }
     }
 
