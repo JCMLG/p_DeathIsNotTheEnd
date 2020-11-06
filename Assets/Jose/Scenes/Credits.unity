@@ -500,12 +500,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\nCredits\r\n\r\n\n\nDavi Sampaio \u2013 Lead Programmer & Project
-    Manager\r\n\nSteven Nobrega \u2013 Assistant Programmer\r\n\nJolan Manalese \u2013
-    2D Artist / Animator\r\n\nCyrus Neal 2D Artist / Animator\r\n\nMohsen Rahimi
-    2D Artist / Animator\r\n\nJose Cordeiro \u2013 Audio Engineer\r\n\r\n\n\nAudio
-    Assets Retrieved from: \r\n\r\nYouTube\r\nFreesound \u2013 https://freesound.org/
-    from users listed:\r\naust_paul - https://freesound.org/people/aust_paul/\r\njosePharoah99
+  m_Text: "\n\n\nCredits\r\n\r\n\n\nDavi Sampaio \u2013 Programmer & Project Manager\r\n\nSteven
+    Nobrega \u2013 Programmer\r\n\nJolan Manalese \u2013 2D Artist / Animator\r\n\nCyrus
+    Neal 2D Artist / Animator\r\n\nMohsen Rahimi 2D Artist / Animator\r\n\nJose Cordeiro
+    \u2013 Audio Engineer\r\n\r\n\n\nAudio Assets Retrieved from: \r\n\r\nYouTube\r\nFreesound
+    \u2013 https://freesound.org/ from users listed:\r\naust_paul - https://freesound.org/people/aust_paul/\r\njosePharoah99
     - https://freesound.org/people/josepharaoh99/\r\n\r\nAdobe Audition - Copyright
     \xA9 2020 Adobe Inc. All rights reserved. https://offers.adobe.com/en/na/audition/offers/audition_dlc/AdobeAuditionDLCSFX.html\r\n\r\n\n\n\nMusic
     assets used in this game is created by: \r\n\r\nKevin Macleod (1997-2020 Incompetech
@@ -1133,8 +1132,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1620228987}
   m_HandleRect: {fileID: 1620228986}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.2798226
+  m_Value: 0.99999994
+  m_Size: 0.27982256
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
