@@ -266,13 +266,11 @@ public class PlayerControllerS : MonoBehaviour
         if (flippedGravity)
         {
             gameObject.transform.rotation = Quaternion.Euler(value, 0, 0);
-            Debug.Log("FLIPPING SPRITE NEW = " + value);
         }
 
         else
         {
             gameObject.transform.rotation = Quaternion.Euler(value * 2, 0, 0);
-            Debug.Log("FLIPPING SPRITE NEW = " + value);
 
         }
 

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
+
+
+    private GameManager gm;
+
+    private const string PLAYER_STR = "Player";
+    private int playerLayer = 0;
+
+    CollisionInteraction playerSkele;
     [SerializeField]
     private GameObject bloodParticles;
     [SerializeField]
