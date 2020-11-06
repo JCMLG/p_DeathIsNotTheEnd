@@ -42,7 +42,7 @@ public class CollisionInteraction : MonoBehaviour
     private void Awake()
     {
 
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gm = GameObject.FindGameObjectWithTag("Respawn").GetComponent<GameManager>();
         transform.position = gm.checkpointData;
 
         respawnPoint.position = gameObject.transform.position;

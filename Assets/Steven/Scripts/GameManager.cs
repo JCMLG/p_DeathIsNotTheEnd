@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    /*
+ /*
  * PROCESS:
  * 
  * PLAYER FINDS CHECKPOINT > CHECKPOINT FEEDS DATA OF HIT CHECKPOINT HERE
