@@ -29,7 +29,7 @@ public class PlayerControllerS : MonoBehaviour
 
 
     [SerializeField] Transform groundCheck;
-    const float GROUND_CHECK_RADIUS = .4f;
+    const float GROUND_CHECK_RADIUS = .2f;
 
     private Vector3 baseVelocity = Vector3.zero;
     [HideInInspector]
