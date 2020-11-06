@@ -29,4 +29,9 @@ public class SceneHandler : MonoBehaviour
     }
 
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

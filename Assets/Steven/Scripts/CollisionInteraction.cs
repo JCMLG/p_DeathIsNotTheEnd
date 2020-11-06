@@ -35,12 +35,13 @@ public class CollisionInteraction : MonoBehaviour
     public Transform respawnPoint;
     //[SerializeField]
     //private float particleTime;
-
+    private AudioManager audioClip;
 
 
 
     private void Awake()
     {
+        audioClip = FindObjectOfType<AudioManager>();
 
         gm = GameObject.FindGameObjectWithTag("Respawn").GetComponent<GameManager>();
         transform.position = gm.checkpointData;
@@ -86,7 +87,9 @@ public class CollisionInteraction : MonoBehaviour
         {
             if (!isSkeleton)
             {
-               // bloodEffect.transform.position = gameObject.transform.position;
+                audioClip.Play("BoneBreak");
+                audioClip.Play("Flesh");
+                // bloodEffect.transform.position = gameObject.transform.position;
                 bloodEffect.transform.SetParent(gameObject.transform, false);
 
                 bloodEffect.transform.parent = null;
@@ -101,6 +104,8 @@ public class CollisionInteraction : MonoBehaviour
             }
             else
             {
+                audioClip.Play("BoneBreak");
+
                 boneEffect.transform.parent = null;
                 boneEffect.SetActive(true);
 
@@ -109,13 +114,6 @@ public class CollisionInteraction : MonoBehaviour
 
             gm.goGone = true;
         }
-
-
-
-
-
-
-
 
         ///When colliding with an object with the checkpoint layer,
         ///record the new respawn position by storing the vectors of the checkpoint.
@@ -137,8 +135,6 @@ public class CollisionInteraction : MonoBehaviour
 
         else if (isSkeleton)
         {
-
-
 
             if (collision.gameObject.layer == deathLayer)
             {
@@ -169,6 +165,7 @@ public class CollisionInteraction : MonoBehaviour
 
         if (isSkeleton)
         {
+            audioClip.Play("Flesh");
             spriteRend.material.SetFloat("_Alpha", 0f);
             bloodEffect.transform.parent = null;
             bloodEffect.SetActive(true);
@@ -177,19 +174,13 @@ public class CollisionInteraction : MonoBehaviour
 
         else if (!isSkeleton)
         {
+
             spriteRend.material.SetFloat("_Alpha", 1f);
+
             //isSkeleton = false;
         }
 
 
     }
-
-    //IEnumerator Invincibility()
-    //{
-    //    deathLayer = 0;
-    //    yield return new WaitForSeconds(.05f);
-    //    deathLayer = LayerMask.NameToLayer(DEATH_LAYER);
-
-    //}
 
 }

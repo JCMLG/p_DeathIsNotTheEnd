@@ -35,7 +35,8 @@ public class Checkpoint : MonoBehaviour
     {
         if(other.gameObject.layer == playerLayer)
         {
-            gm.checkpointData = transform.position;
+            //gm.checkpointData = transform.position;
+            
         }
 
         if(other.gameObject.layer == playerLayer && isGoal == true)
@@ -43,6 +44,7 @@ public class Checkpoint : MonoBehaviour
             other.attachedRigidbody.velocity = Vector2.zero;
             other.gameObject.GetComponent<PlayerControllerS>().enabled = false;
 
+            other.gameObject.GetComponent<PlayerControllerS>().enabled = false;
 
             continueMenu.SetActive(true);
          //   Debug.Log("Goal Reached");

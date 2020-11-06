@@ -5,10 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Jose/Scenes/Credits.unity
-    guid: a4fc83e640dfb0141aa4427e9087498e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jose/Scenes/MainMenu.unity
     guid: 46ea364713f1dbd44807cbd8ad345742
+  - enabled: 1
+    path: Assets/Scenes/New_MainMenu.unity
+    guid: 9f43f12fb4bbfc24d8d8dc0c36a20fe1
+  - enabled: 1
+    path: Assets/Steven/Steven_Workplace_Final.unity
+    guid: a10a7afa8e62a954baf1def7a9d67ac7
+  - enabled: 0
+    path: Assets/Scenes/Level 1.unity
+    guid: f6f42dd49cfd9a64ea1ea6e231082839
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 886533b6fea0bfb4294f8d03d1c8ba35
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: ecc209ca675aa4041aab3537bf1400d4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a4fc83e640dfb0141aa4427e9087498e
   m_configObjects: {}

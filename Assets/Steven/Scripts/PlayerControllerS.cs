@@ -36,6 +36,8 @@ public class PlayerControllerS : MonoBehaviour
     public Rigidbody2D rb;
     private float horizontalMovement = 0f;
 
+    private AudioManager audioClip;
+
 
     public bool flippedGravity = false;
 
@@ -48,14 +50,17 @@ public class PlayerControllerS : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-       // Debug.Log(flippedGravity);
-        rb = GetComponent<Rigidbody2D>();
-        //rb = RigidbodyInterpolation2D.Interpolate;
-    }
+       audioClip = FindObjectOfType<AudioManager>();
 
-    //update reads input, passes jump as true, which in turn allows the physics based calculations to be active within
-    //Movement() which is nested within FixedUpdate()
-    void Update()
+        // Debug.Log(flippedGravity);
+        rb = GetComponent<Rigidbody2D>();
+        //audioInstance = FindObjectOfType<AudioManager>();
+    //rb = RigidbodyInterpolation2D.Interpolate;
+}
+
+//update reads input, passes jump as true, which in turn allows the physics based calculations to be active within
+//Movement() which is nested within FixedUpdate()
+void Update()
     {
         horizontalMovement = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -75,6 +80,8 @@ public class PlayerControllerS : MonoBehaviour
                // Debug.Log("IntialJump");
                 isJumping = true;
                 jump = true;
+
+                //audioInstance.Play("Jump");
 
             }
         }
@@ -140,6 +147,8 @@ public class PlayerControllerS : MonoBehaviour
                 if (jump)
                 {
                     rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+                    audioClip.Play("Jump");
+
                     isJumping = true;
                     isGrounded = false;
                 }

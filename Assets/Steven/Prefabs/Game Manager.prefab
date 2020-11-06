@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2148928145067778383}
   - component: {fileID: 2148928145067778368}
+  - component: {fileID: 893206355878769556}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Respawn
@@ -46,3 +47,62 @@ MonoBehaviour:
   respawnSeconds: 1
   checkpointData: {x: -9.09, y: 3.35}
   goGone: 0
+--- !u!114 &893206355878769556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148928145067778369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe9464baff041b41b53619f9a6d083e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: Flesh
+    clip: {fileID: 8300000, guid: 61fa332fc2cd63c4b8b04cd6976a388e, type: 3}
+    volume: 0.737
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: d536f16aee449b745b9d3c2753e72df5, type: 3}
+    volume: 2.27
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Ambience
+    clip: {fileID: 8300000, guid: 4e42082f062965c4a8def507436d124e, type: 3}
+    volume: 0.453
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Music
+    clip: {fileID: 8300000, guid: dbed3fb3f216eb34590864e285fb8af8, type: 3}
+    volume: 0.103
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BoneBreak
+    clip: {fileID: 8300000, guid: 2cb5d30a9883da54cabc6edc1060b220, type: 3}
+    volume: 0.341
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
